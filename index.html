@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Sistem Pemantauan Projek JKN Perlis</title>
+
+  <!-- Konfigurasi PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b1020">
+  
+  <!-- Ikon -->
+  <link rel="icon" type="image/png" href="icon-512.png">
+  <link rel="apple-touch-icon" href="icon-512.png">
+
+  <style>
+    /* Buang margin dan pastikan iframe memenuhi skrin penuh */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* Elak scrollbar berganda */
+      background-color: #0b1020;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Iframe yang memuatkan pautan web app luaran anda -->
+  <iframe src="MASUKKAN_URL_WEB_APP_ANDA_DI_SINI" title="Sistem Pemantauan Projek"></iframe>
+
+  <!-- Skrip untuk mendaftar Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(registration => {
+            console.log('ServiceWorker berjaya didaftarkan dengan skop: ', registration.scope);
+          })
+          .catch(err => {
+            console.log('Pendaftaran ServiceWorker gagal: ', err);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
