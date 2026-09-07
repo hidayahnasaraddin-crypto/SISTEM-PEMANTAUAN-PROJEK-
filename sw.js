@@ -1,8 +1,7 @@
+// Tukar ke v3 untuk paksa pelayar web kemaskini fail baru
 const CACHE_NAME = 'pwa-iframe-cache-v3';
 
 // Senarai fail yang perlu disimpan secara luar talian (offline)
-// Nota: Kita tidak boleh cache kandungan dalam iframe secara langsung,
-// kita hanya cache fail pembungkus PWA ini.
 const urlsToCache = [
   './',
   './index.html',
@@ -15,10 +14,12 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Cache dibuka');
+        console.log('Cache dibuka untuk v3');
         return cache.addAll(urlsToCache);
       })
   );
+  // Paksa service worker baru untuk terus aktif
+  self.skipWaiting();
 });
 
 // Peristiwa 'Activate': Buang cache lama jika versi berubah
@@ -35,6 +36,8 @@ self.addEventListener('activate', event => {
       );
     })
   );
+  // Kawal terus semua tab yang terbuka
+  event.waitUntil(self.clients.claim());
 });
 
 // Peristiwa 'Fetch': Berikan tindak balas dari cache jika ada, jika tidak guna rangkaian
@@ -42,11 +45,9 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        // Kembalikan response dari cache jika wujud
         if (response) {
           return response;
         }
-        // Jika tidak wujud di cache, ambil dari internet
         return fetch(event.request);
       })
   );
