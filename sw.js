@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pwa-pemantauan-v1';
+const CACHE_NAME = 'pwa-pemantauan-v2';
 const URLS_TO_CACHE = [
   './',
   './index.html',
