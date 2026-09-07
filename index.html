@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Sistem Pemantauan Projek PKDLMS</title>
+  <title>Sistem Pemantauan Projek JKN Perlis</title>
 
   <!-- Konfigurasi PWA -->
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#0b1020">
   
   <!-- Ikon -->
-  <link rel="icon" type="image/png" href="icon-512.png">
-  <link rel="apple-touch-icon" href="icon-512.png">
+  <link rel="icon" type="image/png" href="./icon-512.png">
+  <link rel="apple-touch-icon" href="./icon-512.png">
 
   <style>
     /* Buang margin dan pastikan iframe memenuhi skrin penuh */
@@ -35,13 +35,13 @@
 
   <!-- Iframe yang memuatkan pautan web app luaran anda -->
   <!-- SILA TUKAR PAUTAN DI BAWAH KEPADA URL WEB APP GOOGLE APPS SCRIPT ANDA -->
-  <iframe src="https://script.google.com/a/macros/moh.gov.my/s/AKfycbwbyflLuN8R7PY2MDAXP1EdmqgGB44ROt_8kygT7UKlSREgFSK5WexR9THWAgVSrKA/exec" title="Sistem Pemantauan Projek"></iframe>
+  <iframe src="MASUKKAN_URL_WEB_APP_ANDA_DI_SINI" title="Sistem Pemantauan Projek"></iframe>
 
   <!-- Skrip untuk mendaftar Service Worker -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
+        navigator.serviceWorker.register('./sw.js')
           .then(registration => {
             console.log('ServiceWorker berjaya didaftarkan dengan skop: ', registration.scope);
           })
