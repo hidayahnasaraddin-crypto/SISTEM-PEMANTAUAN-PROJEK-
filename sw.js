@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pwa-iframe-cache-v1';
+const CACHE_NAME = 'pwa-iframe-cache-v2';
 
 // Senarai fail yang perlu disimpan secara luar talian (offline)
 // Nota: Kita tidak boleh cache kandungan dalam iframe secara langsung,
