@@ -1,5 +1,5 @@
-// Tukar ke v3 untuk paksa pelayar web kemaskini fail baru
-const CACHE_NAME = 'pwa-iframe-cache-v3';
+// Tukar ke v4 untuk paksa pelayar web kemaskini fail baru
+const CACHE_NAME = 'pwa-iframe-cache-v4';
 
 // Senarai fail yang perlu disimpan secara luar talian (offline)
 const urlsToCache = [
@@ -14,7 +14,7 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Cache dibuka untuk v3');
+        console.log('Cache dibuka untuk ' + CACHE_NAME);
         return cache.addAll(urlsToCache);
       })
   );
