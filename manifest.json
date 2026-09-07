@@ -1,0 +1,17 @@
+{
+  "name": "Sistem Pemantauan Projek PKDLMS",
+  "short_name": "SPP PKDLMS",
+  "description": "Papan Pemuka Pemantauan Projek untuk JKN Perlis",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b1020",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
